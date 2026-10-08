@@ -23,6 +23,7 @@ namespace InventoryMaintenance
             };
         }
 
+        //Deshyah Anderson
         private void FillItemListBox()
         {
             lstItems.Items.Clear();
@@ -90,7 +91,11 @@ namespace InventoryMaintenance
             }
             else
             {
-                InventoryItem item = items[i];
+
+                //DeshyahAnderson
+                //InventoryItem item = items[i];
+                string displayText = lstItems.Items[i].ToString()!;
+                InventoryItem item = items. Where (x=>x.GetDisplayText() == displayText).FirstOrDefault()!;
 
                 string message = $"Are you sure you want to delete {item.Description}?";
                 DialogResult result =
